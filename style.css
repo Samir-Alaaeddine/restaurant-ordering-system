@@ -1,0 +1,1494 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap');
+
+:root {
+    --bg: #ece5d8;
+    --surface: #fffcf6;
+    --ink: #2b2620;
+    --ink-soft: #786e60;
+    --accent: #3f5233;
+    --accent-dark: #2e3d26;
+    --border: #e1d8c7;
+    --shadow: rgba(43, 38, 32, 0.10);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    font-family: 'Public Sans', sans-serif;
+    color: var(--ink);
+    background-color: var(--bg);
+    background-image: url("images/LeafBG.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+form {
+    width: 100%;
+    max-width: 480px;
+}
+
+h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 28px;
+    text-align: center;
+    color: var(--accent-dark);
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+}
+
+
+fieldset {
+    background: rgba(255, 252, 246, 0.95);
+    backdrop-filter: blur(3px);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 36px 36px;
+    box-shadow: 0 8px 24px var(--shadow);
+}
+
+legend {
+    padding: 0;
+    width: 100%;
+}
+
+legend h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 0 6px;
+    color: var(--ink);
+}
+
+legend u {
+    text-decoration: none;
+}
+
+/* receipt-perforation divider, the signature element */
+legend::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    margin: 4px 0 24px;
+    background-image: radial-gradient(circle, var(--border) 1.5px, transparent 1.5px);
+    background-size: 10px 6px;
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 14px;
+    table-layout: fixed;
+}
+
+table td:first-child {
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-align: right;
+    padding-right: 14px;
+    white-space: nowrap;
+    width: 160px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(63, 82, 51, 0.12);
+}
+
+select {
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+button[type="submit"]:hover {
+    background: var(--accent-dark);
+}
+
+table tr:has(td[colspan="2"]) td {
+    text-align: center;
+    padding-right: 0;
+}
+
+a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    text-align: center;
+    color: #a33b2e;
+    font-size: 13px;
+    background: #fbecea;
+    border: 1px solid #f0cfc9;
+    border-radius: 8px;
+    padding: 10px 14px;
+    
+    /* ADD THESE TO FIX THE SIDEWAYS FLOATING */
+    clear: both;
+    width: 100%;
+    max-width: 480px;
+    margin: 20px auto 0;
+    box-sizing: border-box;
+}
+
+
+.gov-area-row {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    margin: 14px 0;
+    font-size: 13px;
+    color: var(--ink-soft);
+}
+
+.gov-area-row select {
+    width: 150px;
+    margin-left: 8px;
+    display: inline-block;
+}
+
+.tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    color: var(--ink-soft);
+    margin: -20px 0 28px;
+    letter-spacing: 0.01em;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+table tr:has(input[type="checkbox"]) td {
+    text-align: center;
+    padding-right: 0;
+    font-size: 13px;
+    color: var(--ink-soft);
+}
+
+.cart-float {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    background: var(--accent);
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px var(--shadow);
+    z-index: 100;
+}
+
+.cart-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #a33b2e;
+    color: #fff;
+    font-size: 11px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-button {
+    /* Reset link defaults and layout as a full-width block */
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none; /* Removes default underline */
+    
+    /* Spacing, Typography & Color matching your button style */
+    margin-top: 6px;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--accent);
+    
+    /* Borders and corner smoothing */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    /* Animation transition for seamless hover effects */
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Hover style matches your form submit button state */
+.link-button:hover {
+    background: var(--accent-dark);
+    text-decoration: none; /* Prevents global hover rules from underlining */
+}
+
+/* Focus styles matching standard field interactions */
+.link-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(63, 82, 51, 0.12);
+}
+
+/* 1. Change the selector to only target food menu images */
+.menu-table-container table td img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover; 
+    border-radius: 12px; 
+    border: 1px solid var(--border); 
+    background-color: var(--surface); 
+    box-shadow: 0 4px 10px rgba(43, 38, 32, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+/* 2. Update the hover state selector as well */
+.menu-table-container table td img:hover {
+    transform: scale(1.04); 
+    box-shadow: 0 6px 14px rgba(43, 38, 32, 0.15); 
+    border-color: var(--accent); 
+}
+
+/* Target the links wrapping your option images */
+table tr td a:has(img[src*="images/dinein"]),
+table tr td a:has(img[src*="images/pickup"]),
+table tr td a:has(img[src*="images/delivery"]) {
+    display: inline-block;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 8px 0 24px;
+}
+
+/* Style the internal SVG/PNG icons themselves */
+table tr td a img[src*="images/dinein"],
+table tr td a img[src*="images/pickup"],
+table tr td a img[src*="images/delivery"] {
+    display: block;
+    width: 120px; /* Uniform width for the graphic inside the card */
+    height: auto;
+    mix-blend-mode: multiply; /* Makes white image backgrounds perfectly transparent */
+    transition: transform 0.25s ease;
+}
+
+/* Interactive Hover States for the entire choice card */
+table tr td a:has(img):hover {
+    background: #ffffff;
+    border-color: var(--accent);
+    transform: translateY(-4px); /* Clean lift animation */
+    box-shadow: 0 12px 24px rgba(43, 38, 32, 0.15);
+    text-decoration: none; /* Prevents text underlines */
+}
+
+/* Scale the icon slightly on card hover */
+table tr td a:hover img {
+    transform: scale(1.05);
+}
+
+/* Ensure the loop rows layout as a responsive line block */
+.menu-table-container table tr.menu-item-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--border);
+    width: 100%;
+}
+
+/* Reset specific column alignments */
+.menu-img-cell {
+    width: auto !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+}
+
+/* Text spacing layout details container */
+.menu-info-cell {
+    flex: 1; /* Pushes the action button all the way to the right edge */
+    text-align: left !important;
+    padding-right: 12px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Inline container pushing Name left and Price right */
+.menu-header-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+.menu-item-name {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+}
+
+.menu-item-price {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* Override your global red box error styling on descriptions */
+.menu-item-row .menu-item-desc {
+    text-align: left !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 13px !important;
+    color: var(--ink-soft) !important;
+    line-height: 1.4;
+}
+
+/* Action button area container resets */
+.menu-action-cell {
+    width: auto !important;
+    padding-right: 0 !important;
+}
+
+/* Make your Add to Cart look punchy and small alongside content rows */
+.add-to-cart-btn {
+    padding: 8px 14px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--accent);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s ease;
+}
+
+.add-to-cart-btn:hover {
+    background: var(--accent-dark);
+}
+
+.cart-page {
+    width: 100%;
+    max-width: 480px;
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--border);
+}
+
+.cart-row-img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    box-shadow: 0 3px 8px rgba(43, 38, 32, 0.08);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.cart-row-img:hover {
+    transform: scale(1.05);
+}
+
+.cart-row-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cart-row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.cart-row-name {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+    min-width: 0;
+}
+
+.cart-row-price {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.cart-row-desc {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin: 0;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.cart-qty-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.cart-qty-group form {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0;
+}
+
+.cart-qty-btn[type="submit"] {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 26px !important;
+    height: 26px;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 13px;
+    font-family: inherit;
+    font-weight: 600;
+    border-radius: 6px;
+    background: var(--accent);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.cart-qty-btn[type="submit"]:hover {
+    background: var(--accent-dark);
+}
+
+.cart-qty-value {
+    font-size: 13px;
+    color: var(--ink);
+    min-width: 14px;
+    text-align: center;
+}
+
+.cart-remove-btn {
+    font-size: 15px;
+    flex-shrink: 0;
+    opacity: 0.6;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.cart-remove-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+.cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    margin-top: 4px;
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.cart-total-row span:last-child {
+    color: var(--accent);
+}
+
+.cart-continue-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.cart-back-link {
+    position: fixed; /* Freezes the element in the top left corner of the screen */
+    top: 24px;
+    left: 24px;
+    z-index: 100; /* Ensures it sits above your background image layers */
+    
+    /* Increased sizing and clear readability metrics */
+    font-size: 15px; 
+    font-weight: 600;
+    color: var(--accent); /* Matches your beautiful resto-café green token */
+    text-decoration: none;
+    
+    /* Clean background pill style matching the restaurant theme */
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 10px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px var(--shadow);
+    
+    /* Smooth hover effect */
+    transition: all 0.2s ease;
+}
+
+.cart-back-link:hover {
+    color: var(--white);
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateX(-3px); /* Subtle intuitive slide indicator nudge */
+    text-decoration: none;
+}
+
+/* Layout container for the payment block */
+.payment-section {
+    margin: 20px 0 24px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Style the question heading to match your internal design gray */
+.payment-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin: 0;
+    /* Resetting your global error paragraph styles */
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+/* Arrange options horizontally side-by-side */
+.payment-options-group {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Turn the label wrapping elements into interactive cards */
+.payment-option-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    transition: all 0.2s ease;
+}
+
+/* Hide the default ugly browser radio buttons */
+.payment-option-card input[type="radio"] {
+    display: none;
+}
+
+/* Create a custom styled radio ring indicator */
+.radio-custom {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--ink-soft);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* Hover state changes for cards */
+.payment-option-card:hover {
+    border-color: var(--accent);
+    background: #ffffff;
+}
+
+/* Visual states when an option is selected/checked */
+.payment-option-card:has(input[type="radio"]:checked) {
+    border-color: var(--accent);
+    background: rgba(63, 82, 51, 0.04); 
+}
+
+.payment-option-card input[type="radio"]:checked + .radio-custom {
+    border-color: var(--accent);
+    background: var(--accent);
+}
+
+.payment-option-card input[type="radio"]:checked + .radio-custom::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkout-error-msg {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 16px 0 0 0 !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+}
+
+.receipt-main-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    color: var(--ink);
+    margin: 10px 0 24px;
+}
+
+.receipt-meta-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 16px 0;
+    padding: 0 4px;
+}
+
+.receipt-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 14px;
+    color: var(--ink-soft);
+    border-bottom: 1px dashed rgba(225, 216, 199, 0.5);
+    padding-bottom: 8px;
+}
+
+.receipt-meta-row strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.status-tracking-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 24px 0;
+    padding-left: 6px;
+}
+
+.status-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-soft); 
+    transition: color 0.2s ease;
+}
+
+.status-step.active {
+    color: var(--accent); 
+    font-weight: 600;
+}
+
+.status-icon {
+    font-size: 16px;
+    width: 20px;
+}
+
+/* Layout block section separating tracking from order rows */
+.receipt-items-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 0 4px;
+}
+
+/* Push item names left and totals right */
+.receipt-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--ink-soft);
+}
+
+.item-name-qty {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+/* Subtle smaller scaling formatting layout for item counter numbers */
+.item-name-qty small {
+    margin-left: 6px;
+    color: var(--ink-soft);
+    font-size: 12px;
+}
+
+.item-price-display {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+/* Heavy distinct summary block section border dividing the checkout row elements */
+.receipt-total-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px dashed var(--border);
+    margin-top: 16px;
+    padding-top: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+/* Highlights the price tag in theme green using your serif headline asset font */
+.total-accent-price {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--accent);
+}
+
+/* 1. Reset the legend so it behaves like a normal box inside the card */
+fieldset legend {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* 2. Format the heading text inside its new clean position */
+legend h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: var(--ink);
+    margin: 12px 0 0 0; /* Adds spacing cleanly from the top card border */
+}
+
+legend h2 u {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* 3. Re-draw your signature perforation dots beneath the title */
+legend::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 6px;
+    margin: 14px 0 20px;
+    background-image: radial-gradient(circle, var(--border) 1.5px, transparent 1.5px);
+    background-size: 10px 6px;
+    background-repeat: repeat-x;
+    background-position: center;
+    clear: both; /* Prevents floating elements from breaking your layout */
+}
+
+/* Forces the labels and select drop-downs to stack vertically */
+.reservation-select-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 16px 0 24px;
+    text-align: left;
+    width: 100%;
+}
+
+.reservation-select-group label {
+    display: block;
+    font-size: 14px;
+    color: var(--ink-soft);
+}
+
+.reservation-select-group select {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Fully Booked Message Pill */
+/* Beautifully centered fully booked message with balanced padding */
+.fully-booked-message {
+    text-align: center;
+    color: #a33b2e;
+    font-size: 14px;
+    font-weight: 500;
+    background: #fbecea;
+    border: 1px solid #f0cfc9;
+    border-radius: 8px;
+    
+    /* ADJUSTED SPACING INTERFACES */
+    padding: 16px 20px;
+    margin: 24px auto 28px;
+    width: 92%; /* Pulls the edges in so it doesn't touch the card borders */
+    box-sizing: border-box;
+}
+
+
+/* Success Confirmation Alert Box */
+.reservation-confirmed-box {
+    text-align: center;
+    padding: 12px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.confirmed-status {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.confirmed-held {
+    font-size: 14px;
+    color: var(--ink-soft);
+}
+
+/* ===== Admin additions — append to the bottom of style.css ===== */
+
+/* ===== Admin Overrides & Fixes ===== */
+
+/* ===== Admin Section (Replace everything from .admin-body downward) ===== */
+
+.admin-body {
+    display: block !important;
+    min-height: 100vh;
+    padding: 110px 20px 60px !important;
+    background-color: var(--bg);
+}
+
+/* Fixed Top Navigation Bar */
+.admin-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 40px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 10px var(--shadow);
+    z-index: 1000;
+}
+
+.admin-brand {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent-dark);
+}
+
+.admin-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.admin-nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.admin-nav-links a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* Page Outer Container */
+.admin-wide {
+    max-width: 960px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.admin-wide h1 {
+    margin-bottom: 24px;
+}
+
+/* Card Container Overrides */
+.admin-wide fieldset {
+    max-width: 100% !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 40px 40px;
+}
+
+.admin-wide legend {
+    float: none !important;
+    width: 100%;
+    margin: 0 0 28px 0;
+}
+
+.admin-wide legend h2 {
+    margin: 0;
+}
+
+/* Stat Cards Grid */
+.admin-stat-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 36px;
+}
+
+.admin-stat-card {
+    flex: 1;
+    max-width: 240px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(43, 38, 32, 0.04);
+}
+
+.admin-stat-number {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--accent-dark);
+    margin-bottom: 6px;
+}
+
+.admin-stat-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-weight: 500;
+}
+
+/* Section Header */
+.admin-wide h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    color: var(--ink);
+    margin: 8px 0 16px 0;
+    width: 100%;
+    text-align: left;
+}
+
+/* Table Formatting Overrides */
+.admin-wide table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: auto;
+}
+
+.admin-wide table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+    border-bottom: 2px solid var(--border);
+}
+
+.admin-wide table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--ink);
+}
+
+.admin-wide table td:first-child {
+    text-align: left;
+    width: auto;
+    padding-right: 16px;
+}
+
+.admin-wide table tr:hover td {
+    background: rgba(63, 82, 51, 0.03);
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-badge.preparing { background: #f3e6c8; color: #8a6d1f; }
+.status-badge.ready,
+.status-badge.completed,
+.status-badge.delivered { background: #dfe8d8; color: var(--accent-dark); }
+.status-badge.on-the-way { background: #dbe6ef; color: #2c5a7a; }
+
+.admin-filter-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+/* ===== Admin Order Details Page ===== */
+
+.admin-order-wrap {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+/* Metadata Block */
+.admin-order-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--border);
+}
+
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--ink-soft);
+}
+
+.meta-row strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+/* Section Headings inside Admin Cards */
+.admin-section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 16px 0 12px 0;
+    width: 100%;
+    text-align: left;
+}
+
+/* Items List Block */
+.admin-order-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--border);
+}
+
+.admin-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.admin-item-row .item-name {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.admin-item-row .item-name small {
+    color: var(--ink-soft);
+    margin-left: 6px;
+    font-weight: 600;
+}
+
+.admin-item-row .item-price {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.admin-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.admin-total-row span:last-child {
+    color: var(--accent);
+}
+
+/* Status Update Component Box */
+.admin-status-box {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.status-current-line {
+    font-size: 14px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-status-form {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.admin-status-form select {
+    flex: 1;
+}
+
+.admin-status-form button[type="submit"] {
+    width: auto;
+    margin-top: 0;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.admin-dish-thumb {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* ===== Header Controls & Layout ===== */
+.admin-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-header-row h1 {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.admin-add-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--accent);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+
+.admin-add-btn:hover {
+    background: var(--accent-dark);
+    text-decoration: none;
+}
+
+/* Table Row Alignment Improvements */
+.admin-wide table td {
+    vertical-align: middle;
+}
+
+.admin-actions-cell {
+    white-space: nowrap;
+}
+
+.action-sep {
+    color: var(--border);
+    margin: 0 4px;
+}
+
+.del-link {
+    color: #a33b2e;
+}
+
+.del-link:hover {
+    color: #78261b;
+}
+
+/* ===== Admin Orders Page Specifics ===== */
+
+.admin-filter-form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    white-space: nowrap;
+}
+
+.filter-group select {
+    width: 160px;
+}
+
+.order-link {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.order-link:hover {
+    text-decoration: underline;
+}
+
+.admin-empty-cell {
+    text-align: center !important;
+    color: var(--ink-soft) !important;
+    padding: 30px 10px !important;
+}
+
+/* ===== Dish Form (Add/Edit) ===== */
+
+.dish-form-wrap {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.dish-management-form {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dish-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    text-align: left;
+}
+
+.dish-form-group label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+}
+
+.dish-form-row {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+/* Styled Textarea */
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(63, 82, 51, 0.12);
+}
+
+/* Checkbox container formatting */
+.dish-checkbox-group {
+    display: flex;
+    align-items: center;
+    margin: 4px 0 8px;
+}
+
+.dish-checkbox-group label {
+    font-size: 14px;
+    color: var(--ink);
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Preview Image Card */
+.dish-preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-top: 4px;
+}
+
+.preview-label {
+    font-size: 12px;
+    color: var(--ink-soft);
+    font-weight: 500;
+}
+
+.dish-preview-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 10px rgba(43, 38, 32, 0.08);
+}
+
+/* ===== Admin Reservations Specifics ===== */
+
+.reservation-time {
+    font-weight: 500;
+    color: var(--ink);
+    background: rgba(0, 0, 0, 0.03);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.live-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    margin-right: 5px;
+    box-shadow: 0 0 6px var(--accent);
+}
