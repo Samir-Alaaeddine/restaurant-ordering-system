@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2026 at 12:43 AM
+-- Generation Time: Sep 19, 2026 at 11:46 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `restaurant`
+-- Database: `restaurant_v2`
 --
 
 -- --------------------------------------------------------
@@ -33,59 +33,12 @@ CREATE TABLE `admin` (
   `Password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `area`
+-- Dumping data for table `admin`
 --
 
-CREATE TABLE `area` (
-  `ID` int(11) NOT NULL,
-  `governorateID` int(11) NOT NULL,
-  `Name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `area`
---
-
-INSERT INTO `area` (`ID`, `governorateID`, `Name`) VALUES
-(1, 1, 'Halba'),
-(2, 1, 'Al-Qoubaiyat'),
-(3, 1, 'Bire Akkar'),
-(4, 1, 'Bebnine'),
-(5, 2, 'Baalbek'),
-(6, 2, 'Hermel'),
-(7, 2, 'Aarsal'),
-(8, 2, 'Chmistar'),
-(9, 3, 'Achrafieh'),
-(10, 3, 'Hamra'),
-(11, 3, 'Badaro'),
-(12, 3, 'Verdun'),
-(13, 4, 'Zahle'),
-(14, 4, 'Anjar'),
-(15, 4, 'Rachaya'),
-(16, 4, 'Joub Jannine'),
-(17, 5, 'Jounieh'),
-(18, 5, 'Byblos'),
-(19, 5, 'Faraya'),
-(20, 5, 'Ghazir'),
-(21, 6, 'Baabda'),
-(22, 6, 'Aley'),
-(23, 6, 'Judeideh'),
-(24, 6, 'Deir al-Qamar'),
-(25, 7, 'Nabatieh'),
-(26, 7, 'Bint Jbeil'),
-(27, 7, 'Marjayoun'),
-(28, 7, 'Hasbaya'),
-(29, 8, 'Tripoli'),
-(30, 8, 'Batroun'),
-(31, 8, 'Bcharre'),
-(32, 8, 'Zgharta'),
-(33, 9, 'Sidon'),
-(34, 9, 'Tyre'),
-(35, 9, 'Jezzine'),
-(36, 9, 'Sarafand');
+INSERT INTO `admin` (`ID`, `Username`, `Password`) VALUES
+(1, 'admin', '$2b$10$Gtz/aocgLO.XO4LKCVUu0OR7BbKBBVLQ4rdChb2iviKHjYMxenviC');
 
 -- --------------------------------------------------------
 
@@ -130,32 +83,6 @@ INSERT INTO `dish` (`ID`, `Name`, `Description`, `Price`, `Category`, `ImgPath`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `governorate`
---
-
-CREATE TABLE `governorate` (
-  `ID` int(11) NOT NULL,
-  `Name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `governorate`
---
-
-INSERT INTO `governorate` (`ID`, `Name`) VALUES
-(1, 'Akkar'),
-(2, 'Baalbek-Hermel'),
-(3, 'Beirut'),
-(4, 'Bekaa'),
-(5, 'Keserwan-Jbeil'),
-(6, 'Mount Lebanon'),
-(7, 'Nabatieh'),
-(8, 'North Lebanon'),
-(9, 'South Lebanon');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `orderitems`
 --
 
@@ -172,21 +99,42 @@ CREATE TABLE `orderitems` (
 --
 
 INSERT INTO `orderitems` (`ID`, `orderID`, `dishID`, `quantity`, `price_at_order`) VALUES
-(16, 9, 1, 2, 6.00),
-(17, 9, 2, 1, 4.00),
-(18, 10, 1, 2, 6.00),
-(19, 10, 2, 1, 4.00),
-(20, 11, 1, 2, 6.00),
-(21, 11, 2, 1, 4.00),
-(22, 12, 1, 2, 6.00),
-(23, 12, 2, 1, 4.00),
-(24, 13, 2, 1, 4.00),
-(25, 13, 3, 1, 12.00),
-(26, 13, 6, 1, 8.00),
-(27, 14, 1, 1, 6.00),
-(28, 15, 1, 1, 6.00),
-(29, 15, 2, 1, 4.00),
-(30, 16, 1, 2, 6.00);
+(1, 1, 1, 1, 6.00),
+(2, 1, 9, 1, 14.00),
+(3, 1, 3, 1, 12.00),
+(4, 2, 1, 1, 6.00),
+(5, 2, 3, 1, 12.00),
+(6, 3, 1, 1, 6.00),
+(7, 3, 2, 1, 4.00),
+(8, 4, 3, 1, 12.00),
+(9, 4, 5, 1, 8.00),
+(10, 5, 2, 3, 4.00),
+(11, 6, 1, 1, 6.00),
+(12, 7, 3, 1, 12.00),
+(13, 8, 2, 1, 4.00),
+(14, 8, 9, 1, 14.00),
+(15, 9, 2, 3, 4.00),
+(16, 10, 1, 1, 6.00),
+(17, 11, 4, 1, 9.50),
+(18, 11, 5, 1, 8.00),
+(19, 12, 7, 1, 7.50),
+(20, 13, 1, 1, 6.00),
+(21, 13, 2, 1, 4.00),
+(22, 14, 1, 1, 6.00),
+(23, 14, 2, 1, 4.00),
+(24, 15, 1, 1, 6.00),
+(25, 16, 1, 1, 6.00),
+(26, 16, 2, 1, 4.00),
+(27, 17, 1, 1, 6.00),
+(28, 18, 1, 1, 6.00),
+(29, 19, 1, 1, 6.00),
+(30, 19, 2, 1, 4.00),
+(31, 19, 3, 1, 12.00),
+(32, 19, 4, 1, 9.50),
+(33, 20, 2, 2, 4.00),
+(34, 20, 3, 1, 12.00),
+(35, 21, 3, 1, 12.00),
+(36, 21, 5, 1, 8.00);
 
 -- --------------------------------------------------------
 
@@ -196,27 +144,44 @@ INSERT INTO `orderitems` (`ID`, `orderID`, `dishID`, `quantity`, `price_at_order
 
 CREATE TABLE `orders` (
   `ID` int(11) NOT NULL,
-  `userID` int(11) NOT NULL,
   `Type` varchar(50) NOT NULL,
   `Method` varchar(50) DEFAULT NULL,
   `Status` varchar(50) NOT NULL,
   `total` decimal(10,2) NOT NULL,
-  `created_at` datetime NOT NULL
+  `created_at` datetime NOT NULL,
+  `CustomerName` varchar(50) NOT NULL,
+  `CustomerPhone` char(8) NOT NULL,
+  `Area` varchar(50) DEFAULT NULL,
+  `Address` varchar(100) DEFAULT NULL,
+  `tracking_token` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`ID`, `userID`, `Type`, `Method`, `Status`, `total`, `created_at`) VALUES
-(9, 1, 'delivery', 'Card', 'Preparing', 16.00, '2026-07-29 16:30:21'),
-(10, 1, 'delivery', 'Card', 'Preparing', 16.00, '2026-07-29 16:34:55'),
-(11, 1, 'delivery', 'Card', 'Preparing', 16.00, '2026-07-29 18:40:57'),
-(12, 1, 'delivery', 'Card', 'Preparing', 16.00, '2026-07-29 18:54:24'),
-(13, 1, 'delivery', 'Card', 'On the way', 24.00, '2026-07-30 18:39:52'),
-(14, 1, 'delivery', 'Cash', 'Preparing', 6.00, '2026-07-30 18:43:22'),
-(15, 1, 'pickup', NULL, 'Preparing', 10.00, '2026-08-04 22:56:26'),
-(16, 1, 'delivery', 'Cash', 'Delivered', 12.00, '2026-08-04 22:56:48');
+INSERT INTO `orders` (`ID`, `Type`, `Method`, `Status`, `total`, `created_at`, `CustomerName`, `CustomerPhone`, `Area`, `Address`, `tracking_token`) VALUES
+(1, 'pickup', NULL, 'Preparing', 32.00, '2026-09-19 11:55:00', 'Test Customer', '70000000', NULL, NULL, '455f0ba7a64d4897e0646d3c67484d17'),
+(2, 'delivery', 'Whish Money', 'Preparing', 18.00, '2026-09-19 11:57:15', 'Test Customer', '70000000', 'Barja', 'Main road', 'b59cf8aa3fab0e110f469e8b6ee1107a'),
+(3, 'delivery', 'Cash', 'Preparing', 12.00, '2026-09-19 12:06:39', 'Test Customer', '70000000', 'Barja', 'Main road', 'ffc3ad15d5a545f3340f30fd1dfc4a15'),
+(4, 'delivery', 'Whish Money', 'On the way', 22.00, '2026-09-19 12:20:45', 'Test Customer', '70000000', 'Mazboud', 'Near the square', '9c8339c314aa36e6d3900f83f66f0b8c'),
+(5, 'delivery', 'Whish Money', 'Preparing', 14.00, '2026-09-19 12:42:28', 'Test Customer', '70000000', 'Barja', 'Main road', '8f668ac26c32fd47a4c1ff1a77195f8e'),
+(6, 'pickup', NULL, 'Preparing', 6.00, '2026-09-19 13:28:54', 'Test Customer', '70000000', NULL, NULL, '99564d75fe9ec52c3ded659f1c15f9a1'),
+(7, 'delivery', 'Whish Money', 'On the way', 14.00, '2026-09-19 13:30:39', 'Test Customer', '70000000', 'Barja', 'Main road', '5ed63dc027750d47672eb83039bec732'),
+(8, 'delivery', 'Whish Money', 'Preparing', 20.00, '2026-09-19 13:36:56', 'Test Customer', '70000000', 'Barja', 'Main road', '0bf11497bf7ca4211795071f2ff801e3'),
+(9, 'delivery', 'Whish Money', 'Preparing', 14.00, '2026-09-19 13:40:34', 'Test Customer', '70000000', 'Shhim', 'Main road', '636e897d05488754d7ab9c610d723b6c'),
+(10, 'pickup', NULL, 'Preparing', 6.00, '2026-09-19 22:35:56', 'Test Customer', '70000000', NULL, NULL, '4da23d1634b4860940ec55bddcc1fae5'),
+(11, 'pickup', NULL, 'Preparing', 17.50, '2026-09-19 22:36:06', 'Test Customer', '70000000', NULL, NULL, 'c1ad9c5865fe0b7cf22ac4008c5685df'),
+(12, 'pickup', NULL, 'Preparing', 7.50, '2026-09-19 22:36:14', 'Test Customer', '70000000', NULL, NULL, 'd57f8814eda4aff940d5947c3acf4990'),
+(13, 'pickup', NULL, 'Preparing', 10.00, '2026-09-19 22:57:54', 'Test Customer', '70000000', NULL, NULL, 'b06c325dd6ba3e0d6d8bf4bb2069d8d7'),
+(14, 'pickup', NULL, 'Preparing', 10.00, '2026-09-19 23:00:32', 'Test Customer', '70000000', NULL, NULL, '82fe19a8ee01559542cdc23ce0424c09'),
+(15, 'pickup', NULL, 'Preparing', 6.00, '2026-09-19 23:01:24', 'Test Customer', '70000000', NULL, NULL, '55994cf366c447ef07eeb4a46cf8a9f8'),
+(16, 'pickup', NULL, 'Preparing', 10.00, '2026-09-19 23:03:53', 'Test Customer', '70000000', NULL, NULL, '4af1d3636b870d4acb3ff9c0b8b3fb2f'),
+(17, 'pickup', NULL, 'Preparing', 6.00, '2026-09-19 23:05:29', 'Test Customer', '70000000', NULL, NULL, '2b3b4c1bfd33543a2a667ed490cfc274'),
+(18, 'pickup', NULL, 'Preparing', 6.00, '2026-09-19 23:05:55', 'Test Customer', '70000000', NULL, NULL, '4959cc9d8f35c2a337ecacab4fcfaae5'),
+(19, 'pickup', NULL, 'Preparing', 31.50, '2026-09-19 23:23:43', 'Test Customer', '70000000', NULL, NULL, 'b1aeb16ea92ed147a3d568e25f41acd8'),
+(20, 'delivery', 'Whish Money', 'Delivered', 22.00, '2026-09-19 23:28:59', 'Test Customer', '70000000', 'Barja', 'Main road', 'd394a33f0640ac671755e3092708eacf'),
+(21, 'pickup', NULL, 'Preparing', 20.00, '2026-09-19 23:41:46', 'Test Customer', '70000000', NULL, NULL, '8ffdd7e94a5e1ce8b0484d0be9a474b2');
 
 -- --------------------------------------------------------
 
@@ -227,7 +192,8 @@ INSERT INTO `orders` (`ID`, `userID`, `Type`, `Method`, `Status`, `total`, `crea
 CREATE TABLE `reservation` (
   `ID` int(11) NOT NULL,
   `tableID` int(11) NOT NULL,
-  `userID` int(11) NOT NULL,
+  `CustomerName` varchar(50) NOT NULL,
+  `CustomerPhone` char(8) NOT NULL,
   `reserved_at` datetime NOT NULL,
   `expire_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -236,8 +202,10 @@ CREATE TABLE `reservation` (
 -- Dumping data for table `reservation`
 --
 
-INSERT INTO `reservation` (`ID`, `tableID`, `userID`, `reserved_at`, `expire_at`) VALUES
-(27, 1, 1, '2026-07-30 18:38:55', '2026-07-30 21:38:55');
+INSERT INTO `reservation` (`ID`, `tableID`, `CustomerName`, `CustomerPhone`, `reserved_at`, `expire_at`) VALUES
+(1, 1, 'Test Customer', '70000000', '2026-09-19 12:39:23', '2026-09-19 15:39:23'),
+(2, 2, 'Test Customer', '70000000', '2026-09-19 12:46:43', '2026-09-19 15:46:43'),
+(3, 1, 'Test Customer', '70000000', '2026-09-19 23:18:23', '2026-09-20 02:18:23');
 
 -- --------------------------------------------------------
 
@@ -265,29 +233,6 @@ INSERT INTO `tables` (`ID`, `Number`, `Capacity`) VALUES
 (7, 7, 6),
 (8, 8, 8);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `ID` int(11) NOT NULL,
-  `FullName` varchar(50) NOT NULL,
-  `Phone` char(8) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Password` varchar(255) NOT NULL,
-  `Street` varchar(50) NOT NULL,
-  `Area` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`ID`, `FullName`, `Phone`, `Email`, `Password`, `Street`, `Area`) VALUES
-(1, 'Test User', '70000000', 'test@example.com', '$2y$10$GSNKYyh7CFwpR.KAbX8dDe5FExQ8Dmwjjr//ac7QiDsw09i5NkOGm', 'Sample Street', 33);
-
 --
 -- Indexes for dumped tables
 --
@@ -300,22 +245,9 @@ ALTER TABLE `admin`
   ADD UNIQUE KEY `Username` (`Username`);
 
 --
--- Indexes for table `area`
---
-ALTER TABLE `area`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_area_governorate` (`governorateID`);
-
---
 -- Indexes for table `dish`
 --
 ALTER TABLE `dish`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `governorate`
---
-ALTER TABLE `governorate`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -323,7 +255,7 @@ ALTER TABLE `governorate`
 --
 ALTER TABLE `orderitems`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_constraint` (`orderID`),
+  ADD KEY `fk_orderitems_order` (`orderID`),
   ADD KEY `fk_orderitems_dish` (`dishID`);
 
 --
@@ -331,30 +263,20 @@ ALTER TABLE `orderitems`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_orders_user` (`userID`);
+  ADD UNIQUE KEY `tracking_token` (`tracking_token`);
 
 --
 -- Indexes for table `reservation`
 --
 ALTER TABLE `reservation`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_reservation_table` (`tableID`),
-  ADD KEY `fk_reservation_user` (`userID`);
+  ADD KEY `fk_reservation_table` (`tableID`);
 
 --
 -- Indexes for table `tables`
 --
 ALTER TABLE `tables`
   ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `Phone` (`Phone`),
-  ADD UNIQUE KEY `Email` (`Email`),
-  ADD KEY `fk_user_area` (`Area`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -364,13 +286,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `area`
---
-ALTER TABLE `area`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `dish`
@@ -379,28 +295,22 @@ ALTER TABLE `dish`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `governorate`
---
-ALTER TABLE `governorate`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
 -- AUTO_INCREMENT for table `orderitems`
 --
 ALTER TABLE `orderitems`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tables`
@@ -409,46 +319,21 @@ ALTER TABLE `tables`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `area`
---
-ALTER TABLE `area`
-  ADD CONSTRAINT `fk_area_governorate` FOREIGN KEY (`governorateID`) REFERENCES `governorate` (`ID`);
 
 --
 -- Constraints for table `orderitems`
 --
 ALTER TABLE `orderitems`
-  ADD CONSTRAINT `fk_constraint` FOREIGN KEY (`orderID`) REFERENCES `orders` (`ID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `fk_orderitems_dish` FOREIGN KEY (`dishID`) REFERENCES `dish` (`ID`);
-
---
--- Constraints for table `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `fk_orders_user` FOREIGN KEY (`userID`) REFERENCES `user` (`ID`);
+  ADD CONSTRAINT `fk_orderitems_dish` FOREIGN KEY (`dishID`) REFERENCES `dish` (`ID`),
+  ADD CONSTRAINT `fk_orderitems_order` FOREIGN KEY (`orderID`) REFERENCES `orders` (`ID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `reservation`
 --
 ALTER TABLE `reservation`
-  ADD CONSTRAINT `fk_reservation_table` FOREIGN KEY (`tableID`) REFERENCES `tables` (`ID`),
-  ADD CONSTRAINT `fk_reservation_user` FOREIGN KEY (`userID`) REFERENCES `user` (`ID`);
-
---
--- Constraints for table `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `fk_user_area` FOREIGN KEY (`Area`) REFERENCES `area` (`ID`);
+  ADD CONSTRAINT `fk_reservation_table` FOREIGN KEY (`tableID`) REFERENCES `tables` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
